@@ -49,8 +49,8 @@ beta_jc =  0.0324
 t = 0
 λ =((beta_com *I) + (beta_jc * J))/N*tr_rate
 print(λ)
-FINAL_SLIQRD = open("westafrica_covid_19(postintervention).csv", "w")  # open file for writing
-FINAL_SLIQRD.write("time, S,TR, E, I, J, Q, R, R0\n")  # write headers to file
+FINAL_SLIQRD = open("nig_covid_19(postintervention).csv", "w")  # open file for writing
+FINAL_SLIQRD.write("time, Susc,TR, Exposed, Infec, J, Q, Recovered, R0\n")  # write headers to file
 
 for i in range(0, 30000):
     FINAL_SLIQRD.write(
