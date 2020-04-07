@@ -30,16 +30,13 @@ k = 1 / 6.4
 δ = 1 / 2
 # Period of isolation to recovery
 γ = 1 / 19
-# (Postintervention_value) 
+# (Preintervention_value) 
 beta_com =  0.1352
 # (Preintervention_value) 
 beta_jc =  0.0405
-#(Pre-intervention value)
-# beta_jc =  60
 # initial time in days
-t = 0
+t = 1
 λ =((beta_com *I) + (beta_jc * J))/N
-
 FINAL_SLIQRD = open("westafrica_covid_19(preintervention).csv", "w")  # open file for writing
 FINAL_SLIQRD.write("time, Susceptible, Exposed, Infected, Hospitalized, Isolation_treated, Recovered\n")  # write headers to file
 
@@ -48,8 +45,6 @@ for i in range(0, 30000):
         str(t) + "," + str(S) + "," + str(E) + "," + str(I) + "," + str(J) + "," + str(Q) + "," + str(R) + "\n")
     # print(str(t) + "," + str(S) + "," + str(E) + "," + str(I) + "," + str(J) + "," + str(Q) + "," + str(R) + "\n")
     t = t + 1
-   
-
     dS_dt = -λ * S
     dE_dt = λ * S - k * E
     dI_dt = k * E - α * I
